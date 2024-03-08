@@ -67,11 +67,7 @@ public class BookHandler implements HttpHandler {
                         e.printStackTrace();
                     }
                 }
-                // else{
-                    
-                //     handlePostRepairRequest(exchange);
-                //     System.out.println("hai");
-                // }
+                
                
             }
                  }
@@ -213,7 +209,7 @@ public class BookHandler implements HttpHandler {
     }
 
     public void handlePostRequestRepair(HttpExchange exchange) throws IOException, SQLException {
-        // Implement logic to create a book in the data layer and send response
+       
 
         List<RepairBook> books = new ArrayList<>();
         books = service.manageRepair();

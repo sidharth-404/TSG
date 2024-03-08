@@ -42,15 +42,8 @@ public class RepairController implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
         String method = exchange.getRequestMethod();
         if (method.equals("GET")) {
-           // String[] path = exchange.getRequestURI().getPath().split("/");
-           // if (path.length == 2 || path.length == 3) {
-                //if (path.length == 2) {
+        
                     handleGetRequest(exchange);
-               // } else {
-
-                   // handleGetRequestById(exchange);
-
-                //}
             
         } else if (method.equals("POST")) {
             String path[]=exchange.getRequestURI().getPath().split("/");
