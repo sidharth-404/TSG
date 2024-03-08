@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Dependent and Referenced assets</title>
+
+  <style>
+    body {
+
+      font-family: sans-serif;
+
+      margin: 20px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      background-color: #f2f2f2;
+
+    }
+
+    .container {
+
+      width: 500px;
+
+      border: 1px solid #ccc;
+
+      padding: 20px;
+
+      background-color: #ceecf5;
+
+    }
+
+    label {
+
+      display: block;
+
+      margin-bottom: 5px;
+
+    }
+
+    input[type=text],
+    select {
+
+      width: 100%;
+
+      padding: 5px;
+
+      border: 1px solid #ccc;
+
+      box-sizing: border-box;
+
+      margin-top: 10px;
+
+      margin-bottom: 10px;
+
+    }
+
+    button {
+
+      background-color: #4CAF50;
+
+      color: white;
+
+      padding: 10px 20px;
+
+      border: none;
+
+      cursor: pointer;
+
+      width: 30%;
+
+      margin-top: 10px;
+
+      margin-bottom: 10px;
+
+    }
+
+    #Result {
+
+      border: 1px solid #ccc;
+
+      padding: 10px;
+
+      margin-top: 20px;
+
+      width: 100%;
+
+      length: 50px;
+
+    }
+
+    input[name="result"] {
+
+      border: 1px solid #ccc;
+
+      padding: 30px;
+
+      margin-top: 10px;
+
+      width: 100%;
+
+      margin-bottom: 5px;
+
+    }
+
+    #output {
+
+      border: 1px solid #ccc;
+
+      padding: 30px;
+
+      margin-top: 10px;
+
+      width: 90%;
+      height:40px;
+      overflow: auto;
+      margin-bottom: 5px;
+      white-space: pre-line;
+
+      background-color: #f2f2f2;
+      word-wrap: break-word;
+      display: flex;
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>Find Dependent and Referenced assets</h2>
+
+    <form id="dependencyForm">
+
+      <label for="packageName">Package Name:</label>
+
+      <input type="text" id="packageName" name="packageName" required>
+
+      <br>
+
+      <label for="find">Find:</label>
+
+      <select id="find" name="find">
+
+        <option value="dependency">dependency</option>
+
+        <option value="reference">reference</option>
+
+      </select>
+
+      <br>
+
+      <button type="submit">Submit</button>
+
+    </form>
+
+    <label for="Result">Result:</label>
+
+    <div id="output" >
+  sgwbhsbhddhc,hbdhbhbhubd,duhdbuhbudh,dbhubdh
+    </div>
+
+    <button onclick="clearResult()">Clear</button>
+h
+  </div>
+
+  <script>
+  window.onload = function() {
+            var textContainer = document.getElementById('output');
+            var text = textContainer.innerText;
+            var splitText = text.split(',');
+
+            textContainer.innerHTML = splitText.join(',<br>');
+        };
+    function clearResult() {
+
+      document.querySelector('input[name="result"]').value = ""; // Clear the value of input with name "result"
+
+    }
+
+  </script>
+
+</body>
+
+</html>
