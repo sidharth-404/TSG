@@ -1,16 +1,22 @@
 package main.Repository;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class DbConnection {
     public static Connection getConnection(){
-        String jdbcUrl = "jdbc:mysql://localhost:3306/liberary";
-        String username = "root";
-        String password = "";
+        ResourceBundle rd
+            = ResourceBundle.getBundle("resource.system", Locale.US);
+
+        String jdbcUrl = rd.getString("url");
+        String username = rd.getString("userName");
+        String password = rd.getString("password");
+        String driverClass=rd.getString("driver");
         Connection connection = null;
         try {
             // Step 1: Register JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(driverClass);
             // Step 2: Open a connection
             System.out.println("Connecting to database...");
             connection = DriverManager.getConnection(jdbcUrl, username, password);
